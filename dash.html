@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- dashboard -->
+    <header class="dashboard-header"> 
+        <div> 
+            <h2>My Dashboard</h2> 
+            <p> Welcome, <span id="currentUsername"></span> </p> 
+        </div> 
+        <button id="logoutBtn" class="logout-btn"> Logout </button> 
+    </header> 
+    <main class="dashboard-container"> 
+        
+        <!-- TODO FORM --> 
+         <section class="todo-form-section"> 
+            <h2>Create Todo</h2> 
+            <form id="todoForm"> 
+                
+            <!-- Todo input --> 
+            <div class="todo-input"> 
+                <label for="todoInput"> Todo </label> 
+                <input type="text" id="todoInput" placeholder="What do you want to do?" maxlength="30" required >
+             </div> 
+             
+             <!-- Duration --> 
+              <div class="todo-input"> 
+                    <label for="duration">Duration</label>
+                    <input type="time" id="appt" name="appt">
+             </div> 
+
+            
+            
+            <!-- Alarm --> 
+             <div class="todo-input"> 
+                <label for="alarm"> Alarm </label> 
+                <select id="alarm"> 
+                    <option value="No Alarm"> No Alarm </option> 
+                    <option value="5 minutes before"> 5 minutes before </option> 
+                    <option value="10 minutes before"> 10 minutes before </option> 
+                    <option value="30 minutes before"> 30 minutes before </option> 
+                </select> 
+            </div> 
+            <button type="submit" class="submit-todo" > Submit Todo </button> 
+        </form>
+     </section> 
+     
+      <!-- TODO LIST --> 
+       
+      <section class="todo-list-section"> 
+        <h2> Todos List</h2> <div id="todoList"> 
+            
+         </div> 
+        </section> 
+    </main>
+ <script src="js/script.js"></script>
+</body>
+</html>

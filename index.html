@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <form id="signupForm" class="auth-form" method="GET" action="./authentication.html">
+
+            <h1>Create Account</h1>
+
+            <p class="form-text">
+                Create your account to continue
+            </p>
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="signupUsername">Username</label>
+
+                <input
+                    type="text"id="signupUsername"placeholder="Enter your username"required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="signupEmail">Email</label>
+
+                <input
+                    type="email" id="signupEmail"placeholder="Enter your email"required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="signupPassword">Password</label>
+
+                <input
+                    type="password"id="signupPassword"placeholder="Enter your password" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+
+                <label for="gender">Gender</label>
+
+                <select id="gender" required>
+
+                    <option value="">
+                        Select gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+            <button type="submit" class="auth-btn">
+                Sign Up
+            </button>
+
+            <p class="switch-text">
+                Already have an account?
+                <a href="./authentication.html">Login</a>
+            </p>
+
+            <p id="signupMessage"></p>
+
+        </form>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+</html>
+

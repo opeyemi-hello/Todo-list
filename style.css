@@ -1,0 +1,730 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #5b5cf0;
+    --primary-dark: #4546d8;
+    --secondary: #7c3aed;
+    --background: #f5f7ff;
+    --card: #ffffff;
+    --text: #171a2b;
+    --muted: #737891;
+    --border: #e6e8f0;
+    --danger: #ef4444;
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --shadow: 0 20px 50px rgba(37, 40, 80, 0.10);
+    --small-shadow: 0 8px 25px rgba(37, 40, 80, 0.08);
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(91, 92, 240, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.10), transparent 35%),
+        var(--background);
+    color: var(--text);
+}
+
+
+/* =========================================================
+   AUTHENTICATION PAGES
+   LOGIN + SIGNUP
+========================================================= */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91, 92, 240, 0.95),
+            rgba(124, 58, 237, 0.90)
+        );
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 450px;
+    padding: 42px 38px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(23, 26, 43, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    animation: formAppear 0.5s ease;
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-form h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.form-text {
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #303348;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #f9faff;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(91, 92, 240, 0.10);
+}
+
+.form-group input::placeholder {
+    color: #a0a4b8;
+}
+
+.auth-btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(91, 92, 240, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 14px 30px rgba(91, 92, 240, 0.35);
+}
+
+.auth-btn:active {
+    transform: translateY(0);
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 22px;
+
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.switch-text a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+#signupMessage,
+#loginMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background:
+        linear-gradient(
+            135deg,
+            #191c3b,
+            #292c64
+        );
+
+    color: white;
+
+    box-shadow: 0 8px 30px rgba(20, 22, 55, 0.18);
+}
+
+.dashboard-header h2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.dashboard-header p {
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 14px;
+}
+
+#currentUsername {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.logout-btn {
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: rgba(255, 255, 255, 0.10);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DASHBOARD CONTAINER
+========================================================= */
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   TODO FORM
+========================================================= */
+
+.todo-form-section {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 25px;
+}
+
+.todo-form-section h2,
+.todo-list-section h2 {
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: var(--text);
+}
+
+.todo-form-section h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin-top: 9px;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+.todo-input {
+    margin-bottom: 20px;
+}
+
+.todo-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #303348;
+}
+
+.todo-input input,
+.todo-input select {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #f9faff;
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.todo-input input:focus,
+.todo-input select:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(91, 92, 240, 0.10);
+}
+
+.todo-input input::placeholder {
+    color: #a0a4b8;
+}
+
+.submit-todo {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 11px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(91, 92, 240, 0.20);
+    transition: 0.3s ease;
+}
+
+.submit-todo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(91, 92, 240, 0.30);
+}
+
+
+/* =========================================================
+   TODO LIST
+========================================================= */
+
+.todo-list-section {
+    margin-top: 30px;
+}
+
+.todo-list-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+#todoList::before {
+    content: "TODO                        DURATION                       ALARM                         ACTIONS";
+    display: grid;
+
+    /*
+       Todo | Duration | Alarm | Edit | Delete | Start Working
+    */
+    grid-template-columns: 2fr 1fr 1fr auto auto auto;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 15px;
+    margin-bottom: 10px;
+    background: #f5f7fa;
+    border: 1px solid #e2e5e9;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #555;
+    white-space: pre;
+}
+
+
+/* =========================================================
+   EACH TODO ROW
+========================================================= */
+
+.todo-item {
+    display: grid;
+
+    /*
+       Todo | Duration | Alarm | Edit | Delete | Start Working
+    */
+    grid-template-columns: 2fr 1fr 1fr auto auto auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #e2e5e9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TODO TEXT
+========================================================= */
+
+.todo-item span {
+    font-size: 15px;
+    color: #333;
+}
+
+
+/* =========================================================
+   DURATION
+========================================================= */
+
+.todo-item .duration {
+    font-weight: 600;
+    font-family: monospace;
+}
+
+
+/* =========================================================
+   ALARM
+========================================================= */
+
+.todo-item .alarm {
+    color: #555;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+
+/* EDIT BUTTON */
+
+.todo-item .edit-btn {
+    font-size: 0;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: #f59e0b;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.todo-item .edit-btn::before {
+    content: "✎";
+    font-size: 18px;
+}
+
+.todo-item .edit-btn:hover {
+    background: #d97706;
+}
+
+
+/* DELETE BUTTON */
+
+.todo-item .delete-btn {
+    font-size: 0;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: #ef4444;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.todo-item .delete-btn::before {
+    content: "🗑";
+    font-size: 16px;
+}
+
+.todo-item .delete-btn:hover {
+    background: #dc2626;
+}
+
+
+/* START WORKING BUTTON */
+
+.todo-item .start-btn {
+    background: #22c55e;
+    color: white;
+    border: 1px solid whitesmoke;
+    border-radius: 11px;
+    padding: 12px;
+}
+
+.todo-item .start-btn:hover {
+    background: #16a34a;
+}
+
+/* =========================================================
+   EDITING INPUTS
+========================================================= */
+
+.todo-item input,
+.todo-item select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+}
+
+.todo-item input:focus,
+.todo-item select:focus {
+    border-color: #2563eb;
+}
+
+
+/* =========================================================
+   TABLE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #todoList::before {
+        content: "TODO              DURATION        ALARM             ACTIONS";
+
+        grid-template-columns: 2fr 1fr 1fr auto auto auto;
+
+        font-size: 12px;
+    }
+
+    .todo-item {
+        grid-template-columns: 2fr 1fr 1fr auto auto auto;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .dashboard-header {
+        padding: 18px 5%;
+    }
+
+    .dashboard-header h2 {
+        font-size: 21px;
+    }
+
+    .dashboard-container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .todo-item {
+        grid-template-columns: 1fr 1fr 1fr auto auto auto;
+
+        gap: 10px;
+    }
+
+    .todo-item strong {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Hide the desktop table heading */
+
+    #todoList::before {
+        display: none;
+    }
+
+    .todo-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .todo-item span {
+        grid-column: span 2;
+    }
+
+    .todo-item input,
+    .todo-item select {
+        width: 100%;
+    }
+
+    /*
+       Keep the three action buttons in a row
+    */
+
+    .todo-item .edit-btn,
+    .todo-item .delete-btn,
+    .todo-item button:not(.edit-btn):not(.delete-btn):not(.cancel-btn) {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .auth-container {
+        padding: 20px 15px;
+    }
+
+    .auth-form {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    .auth-form h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-header {
+        min-height: auto;
+
+        gap: 15px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .dashboard-container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .todo-form-section {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    /*
+       Keep Todo information stacked
+    */
+
+    .todo-item {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        padding: 18px;
+
+        gap: 8px;
+    }
+
+    .todo-item strong {
+        grid-column: 1 / -1;
+    }
+
+    /*
+       Edit | Delete | Start Working
+       stay on the same row
+    */
+
+    .todo-item .edit-btn,
+    .todo-item .delete-btn,
+    .todo-item button:not(.edit-btn):not(.delete-btn):not(.cancel-btn) {
+        width: 100%;
+        height: 38px;
+    }
+}
+
+
+/* =========================================================
+   SMALLEST PHONE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .auth-form {
+        padding: 25px 18px;
+    }
+
+    .todo-form-section {
+        padding: 18px;
+    }
+
+    .dashboard-container {
+        width: 95%;
+    }
+
+    .todo-item {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+    }
+
+    .todo-item .edit-btn,
+    .todo-item .delete-btn,
+    .todo-item button:not(.edit-btn):not(.delete-btn):not(.cancel-btn) {
+        width: 100%;
+    }
+}
+
